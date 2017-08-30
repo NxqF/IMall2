@@ -41,7 +41,7 @@ $ ionic serve
 
 ### 安卓端运行
 
-![](http://s-378506.gotocdn.com/pic/shot1.jpg)
+![](http://s-378506.gotocdn.com/pic/shot5.jpg)
 
 ![](http://s-378506.gotocdn.com/pic/shot2.jpg)
 
