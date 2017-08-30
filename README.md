@@ -39,7 +39,7 @@ $ ionic serve
 
 ## 屏幕截图
 
-### Running on Android
+### 安卓端运行
 
 ![](http://s-378506.gotocdn.com/pic/shot1.jpg)
 
