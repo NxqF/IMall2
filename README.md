@@ -2,7 +2,8 @@
 
 一个简易的商城应用，功能正在完善中，目前有购物，聊天，用户注册等板块。
 
-> apk下载地址：![](http://s-378506.gotocdn.com/pic/apk.png)
+> apk下载地址：
+> ![](http://s-378506.gotocdn.com/pic/apk.png)
 > 
 > 电脑端预览：[点击打开](http://s-378506.gotocdn.com:8100)
 >
