@@ -2,7 +2,7 @@
 
 一个简易的商城应用，功能正在完善中，目前有购物，聊天，用户注册等板块。
 
-> apk下载地址：![](http://airing.ursb.me/image/android-sunny-1.jpg-h600.jpg)
+> apk下载地址：![](http://s-378506.gotocdn.com/pic/apk.png)
 > 
 > 电脑端预览：[点击打开](http://s-378506.gotocdn.com:8100)
 >
@@ -39,11 +39,11 @@ $ ionic serve
 
 ### Running on Android
 
-![](http://s-378506.gotocdn.com/pic/shot1.png)
+![](http://s-378506.gotocdn.com/pic/shot1.jpg)
 
-![](http://s-378506.gotocdn.com/pic/shot2.png)
+![](http://s-378506.gotocdn.com/pic/shot2.jpg)
 
-![](http://s-378506.gotocdn.com/pic/shot3.png)
+![](http://s-378506.gotocdn.com/pic/shot3.jpg)
 
-![](http://s-378506.gotocdn.com/pic/shot4.png)
+![](http://s-378506.gotocdn.com/pic/shot4.jpg)
 
