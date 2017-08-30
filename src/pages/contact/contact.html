@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      用户
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-item (click)='logIn()'>
+      <ion-icon name="contact" item-left large color='primary'></ion-icon>
+      <p>{{userName}}</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item (click)='askService()'>
+      <ion-icon name="people" item-left large color='primary'></ion-icon>
+      <p>客服中心</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item (click)='askProblem()'>
+      <ion-icon name="help" item-left large color='primary'></ion-icon>
+      <p>常见问题</p>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item (click)='showShopList()'>
+      <ion-icon name="cart" item-left large color='primary'></ion-icon>
+      <p>购物清单</p>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

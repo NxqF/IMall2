@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>价格</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-item-group *ngFor="let items of price;">
+      <ion-item-divider color="light">{{items.name}}</ion-item-divider>
+      <div *ngFor="let item of items.params;">
+        <ion-item>{{item}}</ion-item>
+      </div>
+      <ion-item class="red">单价:{{items.prices}}元</ion-item>
+    </ion-item-group>
+
+  </ion-card>
+
+  <ion-list>
+    <ion-row>
+      <ion-col>
+        <button ion-button full (click)="goShopCart()">
+          加入购物车
+        </button></ion-col>
+      <ion-col>
+        <button ion-button full color="light" navPop>
+          修改参数
+      </button></ion-col>
+    </ion-row>
+  </ion-list>
+
+</ion-content>

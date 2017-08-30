@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>买家</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor='let item of accounts;let i = index' (click)='push(item)'>
+      <ion-avatar item-left>
+        <img [src]='item.userImgUrl'>
+      </ion-avatar>
+      <h2>{{item.userName}}</h2>
+      <p>{{item._id}}购买列表</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

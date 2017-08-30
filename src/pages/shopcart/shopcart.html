@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>购物车</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-item-group *ngFor="let items of shopCart;let i =index">
+      <ion-item-divider color="light">{{items.name}}
+        <button ion-button item-right icon-only clear (click)='deleteProduct(i)'>
+        <ion-icon name="md-trash"></ion-icon>
+      </button>
+      </ion-item-divider>
+      <div *ngFor="let item of items.params;">
+        <ion-item>{{item}}</ion-item>
+      </div>
+      <ion-item class="red">单价:{{items.prices}}元</ion-item>
+      <ion-item>
+        <ion-label>数量:</ion-label>
+        <ion-input type="number" [(ngModel)]=shopCart[i].num (change)='valueDefine($event,i)'></ion-input>
+      </ion-item>
+    </ion-item-group>
+  </ion-card>
+
+  <div *ngIf='shopCartNum!=0' padding>
+    <span>总费用</span>
+    <span class="orangeRed">￥{{totalPrice}}</span>
+    <button ion-button full (click)="addToList()" >结算</button>
+  </div>
+
+
+  <ion-card *ngIf='shopCartNum==0'>
+    <ion-card-content>
+      <p>还未添加商品至购物车!</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

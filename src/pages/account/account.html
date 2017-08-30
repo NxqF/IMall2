@@ -1,0 +1,78 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>账户中心</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div padding>
+    <ion-segment [(ngModel)]="users">
+      <ion-segment-button value="logIn">
+        已注册账户
+      </ion-segment-button>
+      <ion-segment-button value="signUp">
+        注册新账户
+      </ion-segment-button>
+      <ion-segment-button value="delAccount">
+        删除账户
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!--第一组-->
+
+  <div [ngSwitch]="users">
+    <ion-list *ngSwitchCase="'logIn'">
+      <form (ngSubmit)='onlogIn(f.value)' #f='ngForm'>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type='number' name='name' ngModel required (change)='ifAccountUnExist(f.value)'></ion-input>
+          <!--(change)='ifAccountUnExist(f.value)'-->
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type='password' name='password' ngModel required></ion-input>
+        </ion-item>
+        <button ion-button block type='submit' [disabled]='!f.valid'>log In</button>
+      </form>
+    </ion-list>
+
+    <!--第二组-->
+
+    <ion-list *ngSwitchCase="'signUp'">
+      <form (ngSubmit)='onSignUp(f.value)' #f='ngForm'>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type='number' name='name' ngModel required (change)='ifAccountExist(f.value)'></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type='password' name='password' ngModel required></ion-input>
+        </ion-item>
+        <button ion-button block type='submit' [disabled]='!f.valid'>Create  Account</button>
+      </form>
+    </ion-list>
+
+    <!--第三组-->
+
+    <ion-list *ngSwitchCase="'delAccount'">
+      <form (ngSubmit)='removeAccount(f.value)' #f='ngForm'>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type='number' name='name' ngModel required ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type='password' name='password' ngModel required></ion-input>
+        </ion-item>
+        <button ion-button block type='submit' [disabled]='!f.valid'>Delete  Account</button>
+      </form>
+    </ion-list>
+    
+  </div>
+
+
+</ion-content>

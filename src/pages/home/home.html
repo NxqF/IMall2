@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title title-ios>首页</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <!--<ion-slides pager autoplay='1000' loop='true'  effect='fade' parallax='true' slidesPerView='0.5'>
+
+    <ion-slide style="background-color: green">
+      <h2>Slide 1</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: blue">
+      <h2>Slide 2</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: red">
+      <h2>Slide 3</h2>
+    </ion-slide>
+
+  </ion-slides>-->
+
+  <ion-list>
+    <button ion-button full *ngFor="let item of itemTypes ;let i = index" (click)='goProductTypes(item._id)'>
+        {{item.name}}
+      </button>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>参数</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list radio-group *ngFor="let items of params;let i=index;" [(ngModel)]="params[i].option">
+    <ion-list-header no-lines>
+      {{items.name}}
+    </ion-list-header>
+    <ion-item *ngFor='let item of items.params'>
+      <ion-label>{{item}}</ion-label>
+      <ion-radio value="{{item}}"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)='goPrices()' full>go</button>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>问题列表</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+<!--win10 google浏览器 微软中文输入法会造成文字重复输入 searchbar-->
+<ion-content padding>
+  <ion-searchbar (ionInput)="onSetItem($event)" [showCancelButton]="true" type='text'></ion-searchbar>
+  <ion-card *ngFor="let item of questions">
+    <ion-item style="color:#488aff;">{{ item.question }}</ion-item>
+    <ion-card-content>
+      <p>{{ item.answer }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

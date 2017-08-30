@@ -1,0 +1,8 @@
+{
+  "name": "mall",
+  "app_id": "d0b63505",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

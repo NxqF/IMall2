@@ -1,0 +1,29 @@
+page-shoplist {
+
+    .card-bar{
+        background-color:#488aff;
+        color:#ffffff;
+        .bar-padding{
+            padding:13px;
+        }
+    }
+    .content-mg{
+        margin:1px 5px;
+        .back{
+            padding:10px 80px 10px 10px;
+            background-color:#f8f8f8;
+            border-bottom:5px solid white;
+            div{
+                margin-bottom:3px;
+                .params{
+                    color:#6b6b6b
+                }
+            }
+        }
+    }
+    .price-num{
+        font-size:130%;
+    }
+
+
+}

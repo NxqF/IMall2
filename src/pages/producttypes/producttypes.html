@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>产品种类</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <button ion-button full *ngFor="let item of productTypes | producttypefilter:filter[0] ;let i = index" (click)='goParams(item._id)'>
+        {{item.name}}
+      </button>
+  </ion-list>
+</ion-content>
