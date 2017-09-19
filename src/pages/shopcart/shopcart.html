@@ -1,42 +1,92 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>购物车</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>购物车</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-card>
-    <ion-item-group *ngFor="let items of shopCart;let i =index">
-      <ion-item-divider color="light">{{items.name}}
-        <button ion-button item-right icon-only clear (click)='deleteProduct(i)'>
-        <ion-icon name="md-trash"></ion-icon>
-      </button>
-      </ion-item-divider>
-      <div *ngFor="let item of items.params;">
-        <ion-item>{{item}}</ion-item>
-      </div>
-      <ion-item class="red">单价:{{items.prices}}元</ion-item>
-      <ion-item>
-        <ion-label>数量:</ion-label>
-        <ion-input type="number" [(ngModel)]=shopCart[i].num (change)='valueDefine($event,i)'></ion-input>
-      </ion-item>
-    </ion-item-group>
-  </ion-card>
+<ion-content class="lightwhite" padding>
 
-  <div *ngIf='shopCartNum!=0' padding>
-    <span>总费用</span>
-    <span class="orangeRed">￥{{totalPrice}}</span>
-    <button ion-button full (click)="addToList()" >结算</button>
-  </div>
+    <ion-fab right bottom>
+        <button ion-fab mini (click)='scrollToTop()' class="fab"><ion-icon name="arrow-up"></ion-icon></button>
+    </ion-fab>
 
 
-  <ion-card *ngIf='shopCartNum==0'>
-    <ion-card-content>
-      <p>还未添加商品至购物车!</p>
-    </ion-card-content>
-  </ion-card>
+    <ion-list>
+        <ion-item *ngFor="let items of shopCart;let i =index" class="promarbot">
+            <ion-thumbnail item-start (click)='goParams(items.productTypesId)'>
+                <img src={{items.mainpic[0]}} alt="">
+            </ion-thumbnail>
+            <div (click)='goParams(items.productTypesId)' style="-webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;">
+                <p style="font-size:1.5rem"> {{items.name}} </p>
+                <p class="gray"> {{items.params}}</p>
+            </div>
+            <button ion-button clear item-end class="price"><p>¥{{items.prices}}</p></button>
+            <button ion-button clear item-end class="trash" (click)='deleteProduct(i)'><ion-icon name="md-trash"></ion-icon></button>
+            <button ion-button clear item-end class="num">
+                <p>数量:</p>
+                <input type="number" [(ngModel)]=shopCart[i].num (change)='valueDefine($event,i)'>
+            </button>
+        </ion-item>
+    </ion-list>
+
+    <ion-grid class="subprice" *ngIf='shopCartNum!=0'>
+        <ion-row (click)="addToList()" align-items-center style="text-align:center;">
+            <ion-col padding class="subl">合计：<span class="red">¥{{totalPrice}}</span> </ion-col>
+            <ion-col class="subr" padding>结算({{shopCartNum}})</ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <div class="item item-divider Tips tCenter" *ngIf='shopCartNum==0'>
+        <div class="tipsmartop">
+            <span class="vline grayline marbottom"></span>
+            <ion-icon name="ios-cart-outline"></ion-icon>
+            <span class="vline grayline marbottom"></span>
+            <div class="spadding">
+                <p class="martop">购物车还是空的，</p>
+                <p class="martop">去挑几件中意的商品吧</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="item favor lightwhite tCenter">
+        <span class="vline grayline leftline-width"></span>
+        <ion-icon color="primary" name="ios-heart-outline" class="heart"></ion-icon>
+        <span> 猜你喜欢</span>
+        <span class="vline grayline rightline-width"></span>
+    </div>
+
+    <div class="row bqitem1">
+        <div class="col bline" *ngFor="let items of priceSession;let i =index" (click)='goParams(items.productTypesId)'>
+            <img src={{items.mainpic[0]}}>
+            <div class="textwrap marbottom" style="-webkit-box-orient: vertical;">
+                <p>{{items.name}}</p>
+            </div>
+            <span class="red">¥{{items.prices}}</span>
+            <span class="line-th">¥{{items.prices*2}}</span>
+        </div>
+        <div *ngIf='prices' class="maxwidth">
+            <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf='priceNum<prices.length'>
+                <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="产品加载中····"></ion-infinite-scroll-content>
+            </ion-infinite-scroll>
+        </div>
+    </div>
+
+    <div *ngIf='prices'>
+        <a class="item item-divider spadding" *ngIf='priceNum>=prices.length'>
+            <div class="endwidth">
+                <div class="endpic">
+                    <img src="http://s-378506.gotocdn.com/pic/other/end.jpg" alt="">
+                </div>
+                <p class="endtitle tCenter">喵，已经看到最后啦</p>
+            </div>
+        </a>
+    </div>
+
 
 </ion-content>

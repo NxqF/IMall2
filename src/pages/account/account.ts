@@ -51,7 +51,7 @@ export class AccountPage {
     this.existing = false
     for (var x = 0; x < this.accounts.length; x++) {
       if (account.name == this.accounts[x].name) {
-        this.showToast('User was already exist')
+        this.showToast('用户名已被注册')
         this.existing = true
       }
     }
@@ -60,12 +60,12 @@ export class AccountPage {
   onSignUp(value) {
     if (this.existing == false) {
       this.itemtypesService.addAccounts(value.name, value.password).subscribe(() => {
-        this.showToast('User SignUp success')
+        this.showToast('注册成功')
         this.existing = true
         this.loadAccounts()
       })
     } else {
-      this.showToast('User was already exist')
+      this.showToast('用户名已被注册')
     }
   }
 
@@ -77,14 +77,14 @@ export class AccountPage {
       { break }
       else if (x == this.accounts.length - 1) {
         this.unExisting = true
-        this.showToast('User was unExist')
+        this.showToast('用户不存在')
       }
     }
   }
 
   onlogIn(account) {
     if (this.unExisting == true) {
-      this.showToast('User was unExist')
+      this.showToast('用户不存在')
     } else if (this.unExisting == false) {
       for (var x = 0; x < this.accounts.length; x++) {
         if (account.name == this.accounts[x].name && account.password == this.accounts[x].password) {
@@ -93,7 +93,7 @@ export class AccountPage {
           this.viewCtrl.dismiss(this.accounts[x].name);
           break
         } else if (x == this.accounts.length - 1) {
-          this.showToast('password was incorrect')
+          this.showToast('密码错误')
         }
       }
     }
@@ -101,18 +101,6 @@ export class AccountPage {
 
   setUser(userInfo){
     return userInfo
-  }
-
-  removeAccount(id) {
-    for (var x = 0; x < this.accounts.length; x++) {
-      if (id.name == this.accounts[x].name && id.password == this.accounts[x].password) {
-        this.itemtypesService.deleteAccounts(this.accounts[x]._id).subscribe(() => {
-          this.showToast('User was already delete')
-        })
-      } else if (x == this.accounts.length) {
-        this.showToast('User was unExist')
-      }
-    }
   }
 
 }

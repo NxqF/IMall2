@@ -52,5 +52,6 @@ export class ShoplistPage {
         this.fShopList.push(list[x])
       }
     }
+    console.log(this.fShopList)
   }
 }

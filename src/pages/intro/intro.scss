@@ -1,0 +1,36 @@
+page-intro {
+    ion-label{
+        white-space: normal;
+    }
+    .scroll-content{
+        background-color: #fff;
+    }
+    .bgr{
+        .scroll-content{
+            background-color: #000 !important;
+        }
+        .item-md{
+            color:#fff;
+            background-color: #000;
+        }
+        .item-md p{
+            color: #ddd;
+        }
+        ion-navbar{
+            background: #333;
+        }
+        .toolbar-background-md{
+            opacity: 0;
+        }
+        .toolbar-title-md{
+            color: white
+        }
+        .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+            color:#fff
+        }
+    }
+    .readMode{
+        font-size:10px;line-height:100%
+    }
+
+}

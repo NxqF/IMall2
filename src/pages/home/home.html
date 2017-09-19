@@ -1,33 +1,114 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title title-ios>首页</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-searchbar placeholder='search' type='text' (click)='goItemTypes()'></ion-searchbar>
+    </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
 
-  <!--<ion-slides pager autoplay='1000' loop='true'  effect='fade' parallax='true' slidesPerView='0.5'>
+    <div class="wi-top-cont clearfix">
+        <div class="wi-average-wrap row">
+            <div class="wi-main-flex2 font-s col" (click)='goProductTypes(page[0])'>
+                <div class="wi-main-item">
+                    <div class="wi-top-pic">
+                        <img src="http://s-378506.gotocdn.com/pic/logo/sj.png"></div>
+                </div>
+                手机数码
+            </div>
+            <div class="wi-main-flex2 font-s col" (click)='goProductTypes(page[1])'>
+                <div class="wi-main-item">
+                    <div class="wi-top-pic">
+                        <img src="http://s-378506.gotocdn.com/pic/logo/dn.png"></div>
+                </div>
+                电脑配件
+            </div>
+            <div class="wi-main-flex2 font-s col" (click)='goProductTypes(page[2])'>
+                <div class="wi-main-item">
+                    <div class="wi-top-pic">
+                        <img src="http://s-378506.gotocdn.com/pic/logo/book.png"></div>
+                </div>
+                图书
+            </div>
+            <div class="wi-main-flex2 font-s col" (click)='goProductTypes(page[3])'>
+                <div class="wi-main-item">
+                    <div class="wi-top-pic">
+                        <img src="http://s-378506.gotocdn.com/pic/logo/hzp.png"></div>
+                </div>
+                美妆个护
+            </div>
+            <div class="wi-main-flex2 font-s col" (click)='goProductTypes(page[4])'>
+                <div class="wi-main-item">
+                    <div class="wi-top-pic">
+                        <img src="http://s-378506.gotocdn.com/pic/logo/jiadian.png"></div>
+                </div>
+                家用电器
+            </div>
+        </div>
+    </div>
 
-    <ion-slide style="background-color: green">
-      <h2>Slide 1</h2>
-    </ion-slide>
+    <ion-slides class="mainSlide" autoplay='3000' loop='true' pager='true'>
+            <ion-slide (click)='goParams(page[item.id])'  *ngFor="let item of slide;">
+                <img src={{item.pic}} alt="">
+            </ion-slide>
+        </ion-slides>
 
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
-    </ion-slide>
+    <div class="title">
+        精选市场
+    </div>
 
-    <ion-slide style="background-color: red">
-      <h2>Slide 3</h2>
-    </ion-slide>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-5 (click)='goParams(page[9])'>
+                <img src="http://s-378506.gotocdn.com/pic/banner/hga1.jpg" alt="">
+            </ion-col>
+            <ion-col col-7>
+                <ion-row>
+                    <ion-col (click)='goParams(page[10])' class="bline"><img src="http://s-378506.gotocdn.com/pic/banner/hgb3.jpg" alt=""></ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bline" (click)='goParams(page[15])'><img src="http://s-378506.gotocdn.com/pic/banner/hgc4.jpg" alt=""></ion-col>
+                    <ion-col class="bline" (click)='goParams(page[16])'><img src="http://s-378506.gotocdn.com/pic/banner/hgd2.jpg" alt=""></ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
-  </ion-slides>-->
+    <ion-grid no-padding>
+        <ion-row align-items-center>
+            <ion-col class="title">品牌活动</ion-col>
+            <ion-col col-7>
+                <ion-slides class="subSlide" direction='vertical' autoplay='3000' loop='true' no-padding>
+                    <ion-slide (click)='goParams(page[12])'>
+                        <span class="font-xs">·明天，ecco参加天猫超级品牌日</span>
+                    </ion-slide>
+                    <ion-slide (click)='goParams(page[14])'>
+                        <span class="font-xs">·后天，茅台参加天猫超级品牌日</span>
+                    </ion-slide>
+                    <ion-slide (click)='goParams(page[13])'>
+                        <span class="font-xs">·大后天，斯凯奇参加超级品牌日</span>
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
-  <ion-list>
-    <button ion-button full *ngFor="let item of itemTypes ;let i = index" (click)='goProductTypes(item._id)'>
-        {{item.name}}
-      </button>
-  </ion-list>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-5 (click)='goParams(page[8])'>
+                <img src="http://s-378506.gotocdn.com/pic/banner/hga2.jpg" alt="">
+            </ion-col>
+            <ion-col col-7>
+                <ion-row>
+                    <ion-col (click)='goParams(page[11])' class="bline"><img src="http://s-378506.gotocdn.com/pic/banner/hgb2.jpg" alt=""></ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="bline" (click)='goParams(page[18])'><img src="http://s-378506.gotocdn.com/pic/banner/hgc3.jpg" alt=""></ion-col>
+                    <ion-col class="bline" (click)='goParams(page[17])'><img src="http://s-378506.gotocdn.com/pic/banner/hgd3.jpg" alt=""></ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ion-content>

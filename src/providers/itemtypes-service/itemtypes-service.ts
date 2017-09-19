@@ -15,13 +15,22 @@ export class ItemtypesService {
     public http: Http,
     public appSettings: AppSettings
   ) {
-    console.log(this.apiUrl)
   }
   
   public getItemTypes() {
     return this.http.get(this.apiUrl + 'itemtypes')
       .toPromise()
       .then(response => response.json().result)
+  }
+
+  public addItemTypes(newTodo) {
+    return this.http.post(this.apiUrl + 'itemtypes', { 'name': newTodo })
+      .map(response => response.json());
+  }
+
+  public deleteItemTypes(todoId) {
+    return this.http.delete(this.apiUrl + 'itemtypes/' + todoId)
+      .map(response => response.json());
   }
 
   public getProductTypes() {
@@ -50,11 +59,6 @@ export class ItemtypesService {
 
   public addAccounts(newTodo1, newTodo2) {
     return this.http.post(this.apiUrl + 'accounts', { 'name': newTodo1, 'password': newTodo2 })
-      .map(response => response.json());
-  }
-
-  public deleteAccounts(todoId) {
-    return this.http.delete(this.apiUrl + 'accounts/' + todoId)
       .map(response => response.json());
   }
 

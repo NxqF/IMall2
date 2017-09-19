@@ -13,6 +13,7 @@ import { NavigationService } from '../providers/navigation-service/navigation-se
 import { EmojiProvider } from '../providers/emoji/emoji';
 import { UserstorageProvider } from '../providers/userstorage/userstorage';
 import { IonicStorageModule } from '@ionic/storage';
+import { HomepageData } from '../providers/homepage-data/homepage-data';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { IonicStorageModule } from '@ionic/storage';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AppSettings,
     ItemtypesService,
-    NavigationService, EmojiProvider, UserstorageProvider
+    NavigationService, EmojiProvider, UserstorageProvider, HomepageData
   ]
 })
 export class AppModule {}

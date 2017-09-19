@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 281:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__producttypes__ = __webpack_require__(413);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_producttype_filter_pipe__ = __webpack_require__(418);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__producttypes__ = __webpack_require__(422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_producttype_filter_pipe__ = __webpack_require__(427);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProducttypesPageModule", function() { return ProducttypesPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44,12 +44,12 @@ ProducttypesPageModule = __decorate([
 
 /***/ }),
 
-/***/ 413:
+/***/ 422:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_navigation_service_navigation_service__ = __webpack_require__(200);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProducttypesPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -70,6 +70,7 @@ var ProducttypesPage = (function () {
         this.navParams = navParams;
         this.navigationService = navigationService;
         this.filter = [{ itemTypeId: '' }];
+        this.title = navParams.get('name');
         var x = navParams.get('x');
         this.productTypes = this.navigationService.getProductTypes();
         this.filterSet(x);
@@ -85,7 +86,7 @@ var ProducttypesPage = (function () {
 ProducttypesPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-producttypes',template:/*ion-inline-start:"H:\ionic\mall\src\pages\producttypes\producttypes.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>产品种类</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n\n    <button ion-button full *ngFor="let item of productTypes | producttypefilter:filter[0] ;let i = index" (click)=\'goParams(item._id)\'>\n        {{item.name}}\n      </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"H:\ionic\mall\src\pages\producttypes\producttypes.html"*/,
+        selector: 'page-producttypes',template:/*ion-inline-start:"G:\ionic\mall\src\pages\producttypes\producttypes.html"*/'<ion-header>\n\n    <ion-navbar>\n        <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n    <ion-list>\n        <ion-item *ngFor="let item of productTypes | producttypefilter:filter[0] ;let i = index" (click)=\'goParams(item._id)\'>\n            <ion-thumbnail item-start>\n                <img src={{item.mainpic}} alt="">\n            </ion-thumbnail>\n            <div style="-webkit-line-clamp: 2;\n            -webkit-box-orient: vertical;overflow: hidden;\n            text-overflow: ellipsis;\n            display: -webkit-box;">\n                <p class="productName"> {{item.name}} </p>\n                <p> {{item.description}}</p>\n            </div>\n        </ion-item>\n    </ion-list>\n\n\n</ion-content>'/*ion-inline-end:"G:\ionic\mall\src\pages\producttypes\producttypes.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -96,7 +97,7 @@ ProducttypesPage = __decorate([
 
 /***/ }),
 
-/***/ 418:
+/***/ 427:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -146,7 +147,7 @@ var ProductTypeFilter = (function () {
     return ProductTypeFilter;
 }());
 ProductTypeFilter = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Pipe */])({
         name: 'producttypefilter',
         pure: false
     })

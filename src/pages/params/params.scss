@@ -1,3 +1,50 @@
 page-params {
-
+    .font1{
+        font-size: 1.5rem;
+    }
+    .font2{
+        font-size: 1.2rem
+    }
+    .wordwrap{
+        word-wrap: break-word;
+    }
+    .martop{
+        margin-top: 5px;
+    }
+    .red{
+        color:red
+    }
+    .gray{
+        color: #9b9b9b;
+    }
+    .borclear{
+        border-top: 0;border-left: 0;border-right:0
+    }
+    .redbor{
+        border: 1px solid red
+    }
+    .lrpad{
+        padding: 0 15px
+    }
+    .redback{
+        color:#fff;background-color: red;padding: 2px
+    }
+    .price{
+        padding:10px 10px 0;margin-bottom: 8px;border-width: 0;
+    }
+    ion-icon {
+        display: inline-block;
+        min-width: 12px !important;
+        min-height: 12px !important;
+        font-size: 1em !important;
+    }
+    .item-block{
+        min-height: 3rem
+    }
+    .item-md{
+        font-size: 1.3rem
+    }
+    .list-md{
+        margin-bottom:0
+    }
 }

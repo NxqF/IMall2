@@ -1,16 +1,27 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>产品种类</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>{{title}}</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
+<ion-content>
 
-    <button ion-button full *ngFor="let item of productTypes | producttypefilter:filter[0] ;let i = index" (click)='goParams(item._id)'>
-        {{item.name}}
-      </button>
-  </ion-list>
+    <ion-list>
+        <ion-item *ngFor="let item of productTypes | producttypefilter:filter[0] ;let i = index" (click)='goParams(item._id)'>
+            <ion-thumbnail item-start>
+                <img src={{item.mainpic}} alt="">
+            </ion-thumbnail>
+            <div style="-webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;">
+                <p class="productName"> {{item.name}} </p>
+                <p> {{item.description}}</p>
+            </div>
+        </ion-item>
+    </ion-list>
+
+
 </ion-content>

@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
-import { NavigationService } from '../../providers/navigation-service/navigation-service';
-import { Events } from 'ionic-angular';
+import { HomepageData } from '../../providers/homepage-data/homepage-data';
 
 @IonicPage()
 @Component({
@@ -11,25 +10,28 @@ import { Events } from 'ionic-angular';
 })
 export class HomePage {
 
-  itemTypes: Array<any>
+  page:Array<any>
+  slide:Array<any>
 
   constructor(
     public navCtrl: NavController,
-    public navigationService: NavigationService,
-    private event: Events,
+    private homepageData : HomepageData
   ) {
-    this.loadItemTypes()
+    this.page = homepageData.page
+    this.slide = homepageData.slide
   }
 
-  loadItemTypes() {
-    this.navigationService.loadItemTypes()
-    this.event.subscribe('itemTypes', (data) => {
-      this.itemTypes = data
-    })
+  goItemTypes(){
+    this.navCtrl.push('ItemtypesPage')
   }
 
   goProductTypes(x) {
-    this.navCtrl.push('ProducttypesPage', { 'x': x })
+    this.navCtrl.push('ProducttypesPage', { 'x': x._id ,'name':x.name})
   }
+
+  goParams(x) {
+    this.navCtrl.push('ParamsPage', { 'x': x.productTypesId })
+  }
+
 
 }

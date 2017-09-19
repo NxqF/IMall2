@@ -2,7 +2,7 @@
 
   <ion-navbar>
 
-    <ion-title>问题列表</ion-title>
+    <ion-title>知识库</ion-title>
 
   </ion-navbar>
 
@@ -11,7 +11,7 @@
 <ion-content padding>
   <ion-searchbar (ionInput)="onSetItem($event)" [showCancelButton]="true" type='text'></ion-searchbar>
   <ion-card *ngFor="let item of questions">
-    <ion-item style="color:#488aff;">{{ item.question }}</ion-item>
+    <ion-item class="red">{{ item.question }}</ion-item>
     <ion-card-content>
       <p>{{ item.answer }}</p>
     </ion-card-content>

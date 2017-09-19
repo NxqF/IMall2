@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>产品增加</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+      <form (ngSubmit)='proIns(f.value)' #f='ngForm'>
+        <ion-item>
+          <ion-label floating>产品类别</ion-label>
+          <ion-input type='text' name='name' ngModel required></ion-input>
+        </ion-item>
+        <button ion-button block type='submit' [disabled]='!f.valid'>提交</button>
+      </form>
+
+</ion-content>

@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 276:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customerservice__ = __webpack_require__(408);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_itemtype_filter_pipe__ = __webpack_require__(417);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__customerservice__ = __webpack_require__(413);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_itemtype_filter_pipe__ = __webpack_require__(426);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomerservicePageModule", function() { return CustomerservicePageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44,12 +44,12 @@ CustomerservicePageModule = __decorate([
 
 /***/ }),
 
-/***/ 408:
+/***/ 413:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_navigation_service_navigation_service__ = __webpack_require__(200);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomerservicePage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -87,7 +87,7 @@ var CustomerservicePage = (function () {
 CustomerservicePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-customerservice',template:/*ion-inline-start:"H:\ionic\mall\src\pages\customerservice\customerservice.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>客服中心</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-list>\n    <ion-item *ngFor=\'let item of accounts| itemtypefilter:filter[0];let i = index\' (click)=\'push(item)\'>\n      <ion-avatar item-left>\n        <img [src]=\'item.userImgUrl\'>\n      </ion-avatar>\n      <h2>{{item.userName}}</h2>\n      <p>{{item._id}}对话列表</p>\n    </ion-item>\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"H:\ionic\mall\src\pages\customerservice\customerservice.html"*/,
+        selector: 'page-customerservice',template:/*ion-inline-start:"G:\ionic\mall\src\pages\customerservice\customerservice.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>客服中心</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-list>\n    <ion-item *ngFor=\'let item of accounts| itemtypefilter:filter[0];let i = index\' (click)=\'push(item)\'>\n      <ion-avatar item-left>\n        <img [src]=\'item.userImgUrl\'>\n      </ion-avatar>\n      <h2>{{item.userName}}</h2>\n      <p>与账号{{item.name}}的对话列表</p>\n    </ion-item>\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"G:\ionic\mall\src\pages\customerservice\customerservice.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -98,7 +98,7 @@ CustomerservicePage = __decorate([
 
 /***/ }),
 
-/***/ 417:
+/***/ 426:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -148,7 +148,7 @@ var ItemTypeFilterPipe = (function () {
     return ItemTypeFilterPipe;
 }());
 ItemTypeFilterPipe = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Pipe */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Pipe */])({
         name: 'itemtypefilter',
         pure: false
     })

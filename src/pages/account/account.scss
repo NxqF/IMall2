@@ -1,3 +1,29 @@
 page-account {
-
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated{
+        border-color: #fff;
+    }
+    .segment-md .segment-button{
+        color: #fff
+    }
+    .item-md{
+        background-color: rgba(255, 255, 255, 0);
+        color: #fff;
+    }
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        border-bottom-color: #fff;
+        box-shadow: inset 0 -1px 0 0 #fff;
+    }
+    .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+        border-bottom-color: #f53d3d;
+        box-shadow: inset 0 -1px 0 0 #f53d3d;
+    }
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+        color: #fff;
+    }
+    .input-has-focus .label-md[stacked], .input-has-focus .label-md[floating] {
+        color: #fff;
+    }
+    .button-md{
+        opacity: 0.8
+    }
 }

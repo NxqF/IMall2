@@ -1,0 +1,19 @@
+<ion-header>
+    
+      <ion-navbar>
+          <ion-searchbar placeholder='分类筛选'  (ionInput)="onSetItem($event)" type='text'></ion-searchbar>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    <ion-content padding>
+    
+        <div class="lrPad">
+            <div class="title">现有分类</div>
+            <div class="flex">
+                <div class="grbd" *ngFor="let item of itemTypes;let i = index;" (click)='goProductTypes(item)'>{{item.name}}</div>
+            </div>
+        </div>
+
+    </ion-content>
+    

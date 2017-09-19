@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>productDel</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button  ion-button icon-right *ngFor="let item of itemTypes ;let i = index" (click)='removeAccount(item._id)'>
+    {{item.name}}
+    <ion-icon name="trash"></ion-icon>
+  </button>
+
+</ion-content>

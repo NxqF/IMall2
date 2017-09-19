@@ -1,6 +1,6 @@
 page-chat {
 
-  $userBackgroundColor: #387ef5;
+  $userBackgroundColor: #fb0628;
   $toUserBackgroundColor: #fff;
 
   ion-content .scroll-content{
@@ -33,7 +33,7 @@ page-chat {
       margin: 0;
     }
     textarea{
-      border-bottom: 1px #387ef5;
+      border-bottom: 1px #fb0628;
       border-style: solid;
     }
   }
@@ -92,6 +92,7 @@ page-chat {
     }
 
     .message.left{
+      margin-right: 60px;
       .msg-content{
         background-color: $toUserBackgroundColor;
       }
@@ -114,8 +115,11 @@ page-chat {
     }
 
     .message.right{
+      margin-left: 60px;
+      // text-align: right;
       .msg-detail{
         padding-right: 60px;
+        // padding-left: 60px;
         .msg-info{
           text-align: right;
         }

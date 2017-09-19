@@ -1,0 +1,41 @@
+<ion-header class={{color}}>
+
+  <ion-navbar>
+    <ion-title>项目介绍</ion-title>
+    <ion-buttons end>
+
+      <button ion-button icon-only (click)="presentPopover($event)">
+          <span class="readMode">阅读模式</span><ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding-left padding-right class={{color}}>
+
+  <ion-list>
+    <ion-item>
+      <h2>1、项目技术栈</h2>
+    </ion-item>
+    <ion-item>
+        <p>此项目使用ionic2框架开发，基于最新的angular，使用TypeScript进行开发，网络端使用了express搭建的WebApi，连接mongodb实现数据绑定。</p>
+    </ion-item>
+    <ion-item>
+        <h2>2、项目实现度</h2>
+      </ion-item>
+      <ion-item>
+          <p>作为1款商城类应用，已实现产品展示，选择，选购，绑定用户数据等基本功能（支付接口由于个人开发者无法申请，如果有人请我开店我就做上去，手动滑稽），
+            还有其他小功能如登录状态缓存、阿里小蜜、技术文档等。产品量不多，重复的编辑工作就不做了，产品和个人信息皆通过数据库存储。</p>
+      </ion-item>
+      <ion-item>
+          <h2>3、待改进计划(更新于2017.9.15)</h2>
+        </ion-item>
+        <ion-item>
+            <p>增加产品详情介绍页，产品评价，产品排序，注册验证，个人信息完善，定位功能，可能会修改数据表的结构等。
+            </p>
+        </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,6 +1,24 @@
 page-shopcart {
+    ion-navbar{
+        background: #fb0628;
+    }
+    ion-icon{
+        font-size: 1.5em;
+    }
+    ion-label{
+        white-space: normal
+    }
+    .toolbar-background-md{
+        opacity: 0;
+    }
+    .toolbar-title-md{
+        color: white
+    }
     .red{
-        color: red
+        color: #fb0628
+    }
+    .gray{
+        color:#bbb;
     }
     .orangeRed{
         color:orangered;
@@ -13,5 +31,164 @@ page-shopcart {
     .item-md.item-input.input-has-focus .item-inner{
         border-bottom-color:#fff;
         box-shadow:inset 0 -1px 0 0 #fff;
+    }
+    .list-md .item-block .item-inner {
+         border-bottom: 1px solid #ffffff; 
+    }
+    .item-md.item-block .item-inner {
+        padding-right: 8px;
+         border-bottom: 1px solid #ffffff; 
+    }
+    .tCenter{
+        text-align: center;
+    }
+    .item-divider {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        min-height: 30px;
+        background-color: #f5f5f5;
+        color: #222;
+        font-weight: 500;
+    }
+    .item {
+        border-width: 0;
+        color: #444;
+        position: relative;
+        z-index: 2;
+        padding: 16px;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 0;
+    }
+    .col{
+        background: #ffffff;
+        margin: 0 3px;
+    }
+    .Tips{
+        min-height:300px;
+        color:#ddd;
+        padding-top:1rem;
+        background-color:#f5f5f5
+    }
+    .marbottom{
+        margin-bottom: 8px
+    }
+    .spadding{
+        padding:10px
+    }
+    .martop{
+        margin-top: 10px;color:#bbb
+    }
+    .favor{
+        color:#bbb;
+        border-width: 0;
+        font-size: 14px;
+    }
+    .leftline-width{
+        width: 120px;
+    }
+    .rightline-width{
+        width: 114px;
+    }
+    .endpic{
+        width: 13%;margin: 0 auto 0 auto
+    }
+    .endtitle{
+        color:#ccc;margin-bottom: 10px
+    }
+    .heart{
+        font-size:1.5rem !important;
+    }
+    .endwidth{
+        width: 100%
+    }
+    .tipsmartop{
+        margin-top:7rem
+    }
+    .textwrap{
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+    }
+    .lightwhite{
+        background:#f5f5f5
+    }
+    .promarbot{
+        margin-bottom:1px
+    }
+    .subprice{
+        padding:0;margin-bottom:10px; box-shadow: 0px 4px 5px #dddddd;
+    }
+    .subl{
+        max-width:100%;margin:0;border-top-left-radius: 2px;border-bottom-left-radius:2px;padding:10px !important
+    }
+    .subr{
+        flex-basis:10%;margin:0;background-color:red;color:#fff;
+        border-top-right-radius: 2px;border-bottom-right-radius: 2px;padding:10px !important
+    }
+    p {
+        display: block;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+    }
+    .price{
+        margin-right: -3rem !important;
+        margin-top: -4rem !important;
+    }
+    .trash{
+        margin-right: -4rem !important;
+        margin-top: 0rem !important;
+    }
+    .price p{
+        color:#fb0628;
+    }
+    .num{
+        margin-right: 0rem !important;
+        margin-top: 5rem !important;
+    }
+    input {
+        width: 20px;
+        -webkit-appearance: textfield;
+        background-color: white;
+        -webkit-rtl-ordering: logical;
+        user-select: text;
+        cursor: auto;
+        padding: 1px;
+        border-width: 0px ;
+        border-style: inset;
+        border-color: initial;
+        border-image: initial;
+    }
+    input, textarea, select, button {
+        text-rendering: auto;
+        color: initial;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        margin: 0em 0em 0em 0em;
+        font: 13.3333px Arial;
+    }
+    .col{
+        flex-basis: 40%;
+        max-width: 50%;
+    }
+    .bline{
+        border: 3px solid #F3F3F3;
+    }
+    .fab{
+        color: #fff;
+        background-color: rgba(52, 50, 53, 0.38);
+    }
+    .maxwidth{
+        margin-top: 1rem;
+        width:100%
     }
 }

@@ -73,6 +73,7 @@ export class NavigationService {
     this.itemtypesService.getPrices()
       .then(res => {
         this.prices = res;
+        this.event.publish('prices', this.prices)
       })
   }
 
@@ -81,8 +82,24 @@ export class NavigationService {
   }
 
   loadShopCart(x) {
-    this.shopCart.push(x)
-    this.shopCartNum += 1
+    var same 
+    if(this.shopCartNum ==0){
+      this.shopCart.push(x)
+      this.shopCartNum += 1
+      x.num = 1
+    }else{
+      for(var a=0;a<this.shopCart.length;a++){
+        if(x._id == this.shopCart[a]._id){
+          this.shopCart[a].num +=1
+          same = true
+        }
+      }
+      if(same != true){
+        x.num = 1
+        this.shopCart.push(x)
+        this.shopCartNum += 1
+      }
+    }
   }
 
   getShopCart() {

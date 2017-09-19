@@ -1,3 +1,43 @@
 page-contact {
-
+    ion-navbar{
+        background: #fb0628;
+    }
+    .toolbar-background-md{
+        opacity: 0;
+    }
+    .toolbar-title-md{
+        color: white
+    }
+    .font-s > .col > p {
+        font-size: 1rem;
+    }
+    .font-s > .col > h2 {
+        font-weight: 600;
+    }
+    .font-x{
+        font-size:1.4rem
+    }
+    .rnopad{
+        padding: 5px 0 5px 5px !important;
+    }
+    .history{
+        font-size:1.2rem;padding:5px
+    }
+    .taonum{
+        background-color:#ffc46f;
+        color:#fff;
+        padding:5px;
+        border:2px solid #ffc46f;
+        border-top-left-radius: 5rem;
+        border-bottom-left-radius: 5rem;font-size:1px
+    }
+    .taomar{
+        margin-left:5px
+    }
+    .tooltitle{
+        border-bottom:2px solid #f4f4f4;padding:10px
+    }
+    .pad-5{
+        padding:5px;
+    }
 }

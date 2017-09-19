@@ -1,20 +1,65 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>参数</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
 <ion-content padding>
-  <ion-list radio-group *ngFor="let items of params;let i=index;" [(ngModel)]="params[i].option">
-    <ion-list-header no-lines>
-      {{items.name}}
-    </ion-list-header>
-    <ion-item *ngFor='let item of items.params'>
-      <ion-label>{{item}}</ion-label>
-      <ion-radio value="{{item}}"></ion-radio>
-    </ion-item>
+
+  <ion-slides style="height:32rem;width:100%" autoplay='3000' loop='true' pager='true' *ngFor="let items of price;">
+    <ion-slide *ngFor="let item of items.mainpic;">
+      <img src={{item}} alt="">
+    </ion-slide>
+  </ion-slides> 
+
+  <div class="list">
+    <div class="item boxs price" *ngFor="let items of price;">
+      <section >
+        <div class="wordwrap font1">{{items.name}}</div>
+      </section>
+      <section class="martop">
+        <span class="red font1">单价:{{items.prices}}元</span>
+        <span class="redback font2">优惠促销</span>
+      </section>
+      <section class="martop">
+        <span class="font2 gray">价格</span>
+        <span class="line-th font2">¥{{items.prices*2}}</span>
+      </section>
+      <section class="row" text-center>
+        <span class="col font2 gray">快递：12.00</span>
+        <span class="col font2 gray">月销量851件</span>
+        <span class="col font2 gray">天津</span>
+      </section>
+    </div>
+
+    <div class="boxs">
+      <ion-list>
+        <ion-item *ngFor="let items of params;let i=index;">
+          <ion-label>{{items.name}}</ion-label>
+          <ion-select [(ngModel)]="params[i].option" okText="确认" cancelText="取消" (ionChange)='priceChange()'>
+            <ion-option *ngFor='let item of items.params' value="{{item}}" >{{item}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+
+
+
+    <div class="item borclear boxs">
+      <span class="font2 redbor red">促销</span><span class="font2"> 满1件，享包邮；不包邮地区：台湾，香港，澳门，海外</span><br>
+      <span class="font2 redbor red">积分</span><span class="font2"> 购买可得99积分</span>
+    </div>
+    <div class="item lrpad borclear">
+      <span class="font2">正品保证 . 极速退款 . 七天退换</span>
+    </div>
+    <div class="item lrpad borclear">
+      <ion-icon name="cart"></ion-icon> <span class="font2">全国1028家以上门店同款在售</span>
+    </div>
+  </div>
+
+  <ion-list>
+    <ion-row>
+      <ion-col>
+        <button ion-button full color="light" navPop>看看别的</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full (click)='goShopCart()'>加入购物车</button>
+      </ion-col>
+    </ion-row>
   </ion-list>
-  <button ion-button (click)='goPrices()' full>go</button>
+
 </ion-content>

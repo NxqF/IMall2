@@ -1,11 +1,13 @@
 page-shoplist {
-
     .card-bar{
-        background-color:#488aff;
-        color:#ffffff;
+        background-color:#f4f4f4;
+        color:#000;
         .bar-padding{
             padding:13px;
         }
+    }
+    .card-bar .bar-padding{
+        padding:6px
     }
     .content-mg{
         margin:1px 5px;
@@ -25,5 +27,56 @@ page-shoplist {
         font-size:130%;
     }
 
-
+    ion-navbar{
+        background: #fb0628;
+    }
+    ion-icon{
+        font-size: 1.5em;
+    }
+    ion-label{
+        white-space: normal
+    }
+    .toolbar-background-md{
+        opacity: 0;
+    }
+    .toolbar-title-md{
+        color: white
+    }
+    .red{
+        color: #fb0628
+    }
+    .gray{
+        color:#bbb;
+    }
+    .item {
+        border-width: 0;
+        color: #444;
+        position: relative;
+        z-index: 2;
+        padding: 16px;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 0;
+    }
+    p {
+        display: block;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+    }
+    .price{
+        margin-right: -5rem !important;
+        margin-top: -4rem !important;
+    }
+    .price p{
+        color:#fb0628;
+    }
+    .num{
+        margin-right: 0rem !important;
+        margin-top: 5rem !important;
+    }
+    .botLine{
+        border-bottom:1px solid #f4f4f4
+    }
 }

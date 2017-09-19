@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 280:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__problem__ = __webpack_require__(412);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProblemPageModule", function() { return ProblemPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_ins__ = __webpack_require__(421);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductInsPageModule", function() { return ProductInsPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ProblemPageModule = (function () {
-    function ProblemPageModule() {
+var ProductInsPageModule = (function () {
+    function ProductInsPageModule() {
     }
-    return ProblemPageModule;
+    return ProductInsPageModule;
 }());
-ProblemPageModule = __decorate([
+ProductInsPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__problem__["a" /* ProblemPage */],
+            __WEBPACK_IMPORTED_MODULE_2__product_ins__["a" /* ProductInsPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__problem__["a" /* ProblemPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__product_ins__["a" /* ProductInsPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__problem__["a" /* ProblemPage */]
+            __WEBPACK_IMPORTED_MODULE_2__product_ins__["a" /* ProductInsPage */]
         ]
     })
-], ProblemPageModule);
+], ProductInsPageModule);
 
-//# sourceMappingURL=problem.module.js.map
+//# sourceMappingURL=product-ins.module.js.map
 
 /***/ }),
 
-/***/ 412:
+/***/ 421:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_navigation_service_navigation_service__ = __webpack_require__(200);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProblemPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_itemtypes_service_itemtypes_service__ = __webpack_require__(101);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductInsPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,41 +61,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var ProblemPage = (function () {
-    function ProblemPage(navCtrl, navParams, navigationService) {
+var ProductInsPage = (function () {
+    function ProductInsPage(navCtrl, navParams, itemtypesService, toastCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.navigationService = navigationService;
-        this.initializeQuestion();
+        this.itemtypesService = itemtypesService;
+        this.toastCtrl = toastCtrl;
     }
-    ProblemPage.prototype.initializeQuestion = function () {
-        this.questions = this.navigationService.getQuestions();
+    ProductInsPage.prototype.proIns = function (value) {
+        var _this = this;
+        this.itemtypesService.addItemTypes(value.name).subscribe(function () {
+            _this.showToast();
+        });
     };
-    ProblemPage.prototype.setItems = function (ev) {
-        this.initializeQuestion();
-        var val = ev.target.value;
-        if (val && val.trim() != '') {
-            this.questions = this.questions.filter(function (item) {
-                return (item.question.toLowerCase().indexOf(val.toLowerCase()) > -1 || item.answer.toLowerCase().indexOf(val.toLowerCase()) > -1);
-            });
-        }
+    ProductInsPage.prototype.showToast = function () {
+        var toast = this.toastCtrl.create({
+            message: '增加成功',
+            duration: 1000
+        });
+        toast.present();
     };
-    ProblemPage.prototype.onSetItem = function (en) {
-        this.setItems(en);
-    };
-    return ProblemPage;
+    return ProductInsPage;
 }());
-ProblemPage = __decorate([
+ProductInsPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-problem',template:/*ion-inline-start:"H:\ionic\mall\src\pages\problem\problem.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>问题列表</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n<!--win10 google浏览器 微软中文输入法会造成文字重复输入 searchbar-->\n<ion-content padding>\n  <ion-searchbar (ionInput)="onSetItem($event)" [showCancelButton]="true" type=\'text\'></ion-searchbar>\n  <ion-card *ngFor="let item of questions">\n    <ion-item style="color:#488aff;">{{ item.question }}</ion-item>\n    <ion-card-content>\n      <p>{{ item.answer }}</p>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"H:\ionic\mall\src\pages\problem\problem.html"*/,
+        selector: 'page-product-ins',template:/*ion-inline-start:"G:\ionic\mall\src\pages\product-ins\product-ins.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>产品增加</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n      <form (ngSubmit)=\'proIns(f.value)\' #f=\'ngForm\'>\n        <ion-item>\n          <ion-label floating>产品类别</ion-label>\n          <ion-input type=\'text\' name=\'name\' ngModel required></ion-input>\n        </ion-item>\n        <button ion-button block type=\'submit\' [disabled]=\'!f.valid\'>提交</button>\n      </form>\n\n</ion-content>\n'/*ion-inline-end:"G:\ionic\mall\src\pages\product-ins\product-ins.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-        __WEBPACK_IMPORTED_MODULE_2__providers_navigation_service_navigation_service__["a" /* NavigationService */]])
-], ProblemPage);
+        __WEBPACK_IMPORTED_MODULE_2__providers_itemtypes_service_itemtypes_service__["a" /* ItemtypesService */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]])
+], ProductInsPage);
 
-//# sourceMappingURL=problem.js.map
+//# sourceMappingURL=product-ins.js.map
 
 /***/ })
 

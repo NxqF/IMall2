@@ -12,12 +12,14 @@ export class ProducttypesPage {
 
   productTypes: Array<any>
   filter = [{ itemTypeId: '' }]
+  title
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public navigationService: NavigationService,
   ) {
+    this.title = navParams.get('name');
     var x = navParams.get('x');
     this.productTypes = this.navigationService.getProductTypes()
     this.filterSet(x)

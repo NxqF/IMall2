@@ -9,31 +9,124 @@
 <ion-content padding>
 
   <ion-card>
-    <ion-item (click)='logIn()'>
-      <ion-icon name="contact" item-left large color='primary'></ion-icon>
-      <p>{{userName}}</p>
-    </ion-item>
+    <ion-grid no-padding *ngIf='user==null'>
+        <ion-row align-items-center class="rnopad" (click)='logIn()' >
+          <ion-col col-3 >
+            <img src="./assets/pic/avatar-out.png" alt="">
+          </ion-col>
+          <ion-col col-4>
+              <p>点击登录</p>
+          </ion-col>
+        </ion-row>
+      <ion-row  class="font-s history" text-center>
+        <ion-col><ion-icon name='ios-star-outline'></ion-icon><p>商品收藏</p></ion-col>
+        <ion-col><ion-icon name='ios-pricetags-outline'></ion-icon><p>店铺收藏</p></ion-col>
+        <ion-col><ion-icon name='ios-bookmarks-outline'></ion-icon><p>内容收藏</p></ion-col>
+        <ion-col><ion-icon name='ios-paw-outline'></ion-icon><p>足迹</p></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid no-padding  *ngIf='user'>
+      <ion-row align-items-center class="rnopad" (click)='logIn()'>
+        <ion-col col-3 >
+          <img src="./assets/pic/avatar-in.png" alt="">
+        </ion-col>
+        <ion-col col-4>
+            <p>{{userName}}</p>
+        </ion-col>
+        <ion-col col-5 no-padding>
+          <div class="taonum">
+            <ion-icon name="heart" class="taomar"></ion-icon> 淘气值0 >
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="font-s pad-5" text-center>
+        <ion-col><h2>0</h2><p>商品收藏</p></ion-col>
+        <ion-col><h2>0</h2><p>店铺收藏</p></ion-col>
+        <ion-col><h2>0</h2><p>内容收藏</p></ion-col>
+        <ion-col><h2>0</h2><p>足迹</p></ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 
   <ion-card>
-    <ion-item (click)='askService()'>
-      <ion-icon name="people" item-left large color='primary'></ion-icon>
-      <p>客服中心</p>
-    </ion-item>
+    <ion-card-header class="tooltitle">
+      <ion-grid no-padding>
+        <ion-row justify-content-between >
+          <ion-col col-3 class="font-x">我的订单</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+
+    <ion-grid>
+      <ion-row align-items-center text-center>
+        <ion-col col-4 (click)='showShopList()'>
+          <ion-icon name='cube' color=primary class="pad-5"></ion-icon>
+          <p>待发货</p>
+        </ion-col>
+        <ion-col col-4 (click)='pageUnBuild()'>
+          <ion-icon name='paper-plane' color=primary class="pad-5"></ion-icon>
+          <p>待收货</p>
+        </ion-col>
+        <ion-col col-4 (click)='pageUnBuild()'>
+          <ion-icon name='chatbubbles' color=primary class="pad-5"></ion-icon>
+          <p>待评价</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
 
-  <ion-card>
-    <ion-item (click)='askProblem()'>
-      <ion-icon name="help" item-left large color='primary'></ion-icon>
-      <p>常见问题</p>
-    </ion-item>
-  </ion-card>
 
   <ion-card>
-    <ion-item (click)='showShopList()'>
-      <ion-icon name="cart" item-left large color='primary'></ion-icon>
-      <p>购物清单</p>
-    </ion-item>
+      <ion-card-header class="tooltitle">
+        <ion-grid no-padding>
+          <ion-row justify-content-between >
+            <ion-col col-3 class="font-x">必备工具</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+  
+      <ion-grid>
+        <ion-row align-items-center text-center>
+          <ion-col col-4  (click)='askService()'>
+            <ion-icon name='headset' color=primary class="pad-5"></ion-icon>
+            <p>阿里小蜜</p>
+          </ion-col>
+          <ion-col col-4 (click)='askProblem()'>
+            <ion-icon name='search' color=primary  class="pad-5"></ion-icon>
+            <p>知识库</p>
+          </ion-col>
+          <ion-col col-4 (click)="showIntro()">
+              <ion-icon name='book' color=primary  class="pad-5"></ion-icon>
+              <p>使用说明</p>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+  <ion-card *ngIf='user&&user.role=="5951c3063afd231d8437173e"'>
+    <ion-card-header class="tooltitle">
+      <ion-grid no-padding>
+        <ion-row justify-content-between >
+          <ion-col col-3 class="font-x">编辑工具</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+
+    <ion-grid>
+      <ion-row align-items-center text-center>
+        <ion-col col-4  (click)='proEdit()'>
+          <ion-icon name='add' color=primary class="pad-5"></ion-icon>
+          <p>增加商品</p>
+        </ion-col>
+        <ion-col col-4 (click)='proDel()'>
+          <ion-icon name='trash' color=primary  class="pad-5"></ion-icon>
+          <p>删除商品</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-card>
+
+    
 
 </ion-content>

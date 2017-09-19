@@ -1,0 +1,34 @@
+page-itemtypes {
+    .searchbar-md .searchbar-input{
+        height: 30px
+    }
+    .searchbar-md .searchbar-search-icon{
+        left: 1rem;
+        top: 0.5rem;
+    }
+    .searchbar-md .searchbar-input{
+        border-radius: 2rem;
+    }
+    .title{
+        margin-top:7px;
+        color:#aaa
+    }
+    .flex{
+        display:flex;flex-wrap: wrap;
+    }
+    .grbd{
+        color:#666666;
+        background: #f4f4f4;
+        border-radius: 3px;
+        text-align: center;
+        min-width: 30px;
+        margin-right:10px;
+        line-height: 20px;
+        height: 36px;
+        padding: 8px;
+        margin: 5px 5px 3px 0;
+    }
+    .lrPad{
+        padding: 0 10px;
+    }
+}

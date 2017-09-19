@@ -1,12 +1,12 @@
 # IMall
 
-一个简易的商城应用，功能正在完善中，目前有购物，聊天，用户注册等板块。
+一个仿天猫APP的商城应用，基于ionic2框架开发,项目持续更新中~~~
+目前有选购，注册，编辑等基本功能，有底部加载，登录缓存，阅读模式等交互功能。
 
 > apk下载地址：
 >
-> ![](http://s-378506.gotocdn.com/pic/apk.png)
+> ![](http://s-378506.gotocdn.com/pic/readme/apk.png)
 > 
-> 电脑端预览：[点击打开](http://s-378506.gotocdn.com:8100)
 >
 
 ## System information
@@ -41,11 +41,16 @@ $ ionic serve
 
 ### 安卓端运行
 
-![](http://s-378506.gotocdn.com/pic/shot1.jpg)
+![](http://s-378506.gotocdn.com/pic/readme/screenshot/1.jpg)
 
-![](http://s-378506.gotocdn.com/pic/shot2.jpg)
+![](http://s-378506.gotocdn.com/pic/readme/screenshot/2.jpg)
 
-![](http://s-378506.gotocdn.com/pic/shot3.jpg)
+![](http://s-378506.gotocdn.com/pic/readme/screenshot/3.jpg)
 
-![](http://s-378506.gotocdn.com/pic/shot4.jpg)
+![](http://s-378506.gotocdn.com/pic/readme/screenshot/4.jpg)
 
+![](http://s-378506.gotocdn.com/pic/readme/screenshot/5.jpg)
+
+![](http://s-378506.gotocdn.com/pic/readme/screenshot/6.jpg)
+
+![](http://s-378506.gotocdn.com/pic/readme/screenshot/7.jpg)

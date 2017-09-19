@@ -28,14 +28,15 @@ export class ContactPage {
     public navigationService: NavigationService,
     public userstorage: UserstorageProvider,
     private toastCtrl: ToastController,
-    private event: Events
+    private event: Events,
   ) {
     this.getUser()
+
   }
 
   ionViewDidEnter() {
     if (this.user) {
-      this.userName = `欢迎 ${this.user.name} (点击退出登录)`
+      this.userName = `HI,${this.user.name}`
     }
   }
 
@@ -44,12 +45,12 @@ export class ContactPage {
     modal.onDidDismiss(
       data => {
         if (data != null) {
-          this.userName = `欢迎 ${data} (点击退出登录)`
+          this.userName = `HI,${data}`
           this.getUser()
         } else (
           this.userName = '请登录',
-          this.getUser(),
-          this.clearUser()
+          this.clearUser(),
+          this.getUser()
         )
       });
     modal.present();
@@ -64,11 +65,7 @@ export class ContactPage {
 
     var user = this.userstorage.getUser()
     if (!user) {
-      let toast = this.toastCtrl.create({
-        message: '请登录',
-        duration: 1000
-      });
-      toast.present();
+      this.logIn()
     } else {
       if (user.role == '5951c2b53afd231d8437173d') {
         let modal = this.modalCtrl.create('ShoplistPage');
@@ -91,11 +88,7 @@ export class ContactPage {
   askService() {
     var user = this.userstorage.getUser()
     if (!user) {
-      let toast = this.toastCtrl.create({
-        message: '请登录',
-        duration: 1000
-      });
-      toast.present();
+      this.logIn()
     } else {
       if (user.role == '5951c2b53afd231d8437173d') {
         let modal = this.modalCtrl.create('ChatPage');
@@ -107,4 +100,24 @@ export class ContactPage {
     }
   }
 
+  pageUnBuild(){
+    let toast = this.toastCtrl.create({
+      message: '没有符合条件的订单',
+      duration: 1000
+    });
+    toast.present();
+  }
+
+  showIntro(){
+    let modal = this.modalCtrl.create('IntroPage');
+    modal.present();
+  }
+
+  proEdit(){
+    this.navCtrl.push('ProductInsPage')
+  }
+
+  proDel(){
+    this.navCtrl.push('ProductDelPage')
+  }
 }
