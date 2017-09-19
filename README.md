@@ -5,7 +5,7 @@
 
 > apk下载地址：
 >
-> ![](http://s-378506.gotocdn.com/pic/readme/apk.png)
+> ![](http://s-378506.gotocdn.com/pic/readme/erweima.png)
 > 
 >
 
