@@ -3,11 +3,6 @@
 一个仿天猫APP的商城应用，基于ionic2框架开发,项目持续更新中~~~
 目前有选购，注册，编辑等基本功能，有底部加载，登录缓存，阅读模式等交互功能。
 
-> apk下载地址：
->
-> ![](http://s-378506.gotocdn.com/pic/readme/erweima.png)
-> 
->
 
 ## System information
 
@@ -39,18 +34,16 @@ $ ionic serve
 
 ## 屏幕截图
 
-### 安卓端运行
+![](https://raw.githubusercontent.com/NxqF/test/master/pic/readme/screenshot/1.jpg)
 
-![](http://s-378506.gotocdn.com/pic/readme/screenshot/1.jpg)
+![](https://raw.githubusercontent.com/NxqF/test/master/pic/readme/screenshot/2.jpg)
 
-![](http://s-378506.gotocdn.com/pic/readme/screenshot/2.jpg)
+![](https://raw.githubusercontent.com/NxqF/test/master/pic/readme/screenshot/3.jpg)
 
-![](http://s-378506.gotocdn.com/pic/readme/screenshot/3.jpg)
+![](https://raw.githubusercontent.com/NxqF/test/master/pic/readme/screenshot/4.jpg)
 
-![](http://s-378506.gotocdn.com/pic/readme/screenshot/4.jpg)
+![](https://raw.githubusercontent.com/NxqF/test/master/pic/readme/screenshot/5.jpg)
 
-![](http://s-378506.gotocdn.com/pic/readme/screenshot/5.jpg)
+![](https://raw.githubusercontent.com/NxqF/test/master/pic/readme/screenshot/6.jpg)
 
-![](http://s-378506.gotocdn.com/pic/readme/screenshot/6.jpg)
-
-![](http://s-378506.gotocdn.com/pic/readme/screenshot/7.jpg)
+![](https://raw.githubusercontent.com/NxqF/test/master/pic/readme/screenshot/7.jpg)
